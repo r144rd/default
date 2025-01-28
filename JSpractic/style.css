@@ -1,0 +1,21 @@
+.chck-box input{
+    height: 100px;
+    width: 30px;
+}
+
+.inp input{
+    height: 30px;
+    width: 30px;
+}
+
+.main-section h1{
+    font-family: fantasy;
+    font-style:italic;
+    font-size: 50px;
+}
+
+
+.range-red input{
+    height: 500px;
+    width: 500px;
+}

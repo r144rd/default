@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>base</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-section">
+    <h1>DOM</h1>
+    </div>
+
+
+    <div class="chck-box">
+        <input type="checkbox" name="" id="check" onchange="checkedorno()">
+    </div>
+    <div class="header-main">
+        <h1>===</h1>
+        <hr color="blue" size="5px">
+    </div>
+
+
+
+<div class="inp" onchange="checkinp()">
+    <input type="radio" name="r1" value="5">0
+    <input type="radio" name="r1" value="4">1
+    <input type="radio" name="r1" value="3">2
+</div>
+    
+
+    <button onclick="checkinp()">Check element NUMBER</button>
+    <hr color="blue" size="5px">
+    
+    <div class="second-task">
+        <select name="" id="select-1" onchange="selected()">
+            <option value="">apple</option>
+            <option value="">banana</option>
+            <option value="">kiwi</option>
+            <option value="">orange</option>
+            <option value="">pineapple</option>
+        </select>
+    </div>
+
+
+    <hr color="blue" size="5px">
+
+    <div class="range-red" min="0" max="100" step="2" oninput="funfun()" id="range">
+        <p id="first"></p>
+        <input type="range">
+    </div>
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>
