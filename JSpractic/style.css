@@ -19,3 +19,36 @@
     height: 500px;
     width: 500px;
 }
+
+.test{
+    height: 20px;
+    width: 20px;
+    background-color: green;
+}
+
+#block{
+    width: 200px;
+    height: 100px;
+    background-color: blue ;
+}   
+.down{
+    margin-bottom: 500px;
+}
+
+
+
+.menu-item{
+    border: 2px solid grey;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+
+}
+
+.menu-item .submenu{
+    height: 40px;
+    width: 150px;
+    background-color: grey;
+    position: absolute;
+    cursor: pointer;
+}
