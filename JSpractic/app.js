@@ -125,3 +125,20 @@ function TabHeaderClick(event) {
         TabContentOnOff(i, IsEnable);
     }
 }
+
+
+
+
+let modal = document.getElementById('myModal');
+let btn = documnet.getElementById('myBtn');
+let span = document.getElementsByClassName("close")[0];
+
+
+btn.onclick = function(){
+    modal.style.display = "block";
+
+}
+span.onclick = function(){
+    modal.style.display = "none";
+}
+
