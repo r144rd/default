@@ -96,20 +96,32 @@ function closeMenu() {
 }
 
 
-let tab;
-let tabcontent;
-
-
-window.onload = function(){
-    tabcontent = document.getElementsByClassName('tabcontent')
-    tab = document.getElementsByClassName('tab')
-    hidetabs(1)
-}
-
-
-function hidetabs(a){
-    for(let i = a;i < tabcontent.length; i++ ){
-        tabcontent[i].classList.remove('show')
+let tabsHeader;
+let tabsContent;
+window.onload = function () {
+    tabsContent = document.getElementsByClassName('tabContent');
+    tabsHeader = document.getElementsByClassName('tabHeader');
+    for (let i = 0; i < tabsHeader.length; i++) {
+        tabsHeader[i].onclick = TabHeaderClick;
     }
-
+};
+function TabContentOnOff(index, show) {
+    tabsContent[index].style.display = show === true ? "block" : "none";
+}
+function TabHeaderOnOff(index, enable) {
+    if (enable) {
+        tabsHeader[index].classList.add('active');
+    }
+    else {
+        tabsHeader[index].classList.remove('active');
+    }
+}
+function TabHeaderClick(event) {
+    let target = event.target;
+    let IsEnable;
+    for (var i = 0; i < tabsHeader.length; i++) {
+        IsEnable = (tabsHeader[i] == target);
+        TabHeaderOnOff(i, IsEnable);
+        TabContentOnOff(i, IsEnable);
+    }
 }

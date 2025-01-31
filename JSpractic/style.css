@@ -53,7 +53,9 @@
     cursor: pointer;
 }
 
-
+#tabs{
+    margin-top: 500px;
+}
 #tabs .tab{
     display: inline-block;
     cursor: pointer;
@@ -88,4 +90,36 @@
 
 #tabs .show{
 display: block;
+}
+
+
+div.tabHeader
+{
+    display: inline-block;
+    padding: 5px 10px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    background-color: blue;
+}
+
+    div.tabHeader.active
+    {
+        border: 1px solid #707070;
+        border-bottom: 1px solid white;
+        border-radius: 3px 3px 0 0;
+        background-color: red;
+    }
+
+div.tabContent
+{
+    width: 300px;
+    height: 60px;
+    border: 1px solid #707070;
+    position: relative;
+    top: -1px;
+    z-index: 1;
+    padding: 10px;
+    border-radius: 0 0 3px 3px;
+    background-color: #e2b392;
 }
