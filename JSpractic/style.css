@@ -1,3 +1,9 @@
+
+.void{
+    margin-top: 500px;
+    margin-bottom: 500px;
+}
+
 .chck-box input{
     height: 100px;
     width: 30px;
@@ -138,7 +144,7 @@ div.tabContent
 
 }
 
-.model-content{
+.modal-content{
     background-color: pink;
     margin: 15% auto;
     padding: 20px;
@@ -151,5 +157,23 @@ div.tabContent
     float: right;
     font-size: 28px;
     font-weight: bold;
+    
+}
+
+
+#myContainer{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background-color: green;
+
+}
+
+
+#myAnimation{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: red;
     
 }

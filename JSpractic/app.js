@@ -1,3 +1,5 @@
+
+
 function checkedorno(){
 
 let checkbox = document.getElementById('check');
@@ -67,16 +69,16 @@ function funrange(){
 
 
 
-document.getElementById('nav').onmouseover = function(event) {
-    let target = event.target;
-    if (target.className == 'menu-item') {
-        let s = target.getElementsByClassName('submenu');
-        closeMenu();
-        if (s.length > 0) {
-            s[0].style.display = 'block';
-        }
-    }
-}
+// document.getElementById('nav').onmouseover = function(event) {
+//     let target = event.target;
+//     if (target.className == 'menu-item') {
+//         let s = target.getElementsByClassName('submenu');
+//         closeMenu();
+//         if (s.length > 0) {
+//             s[0].style.display = 'block';
+//         }
+//     }
+// }
 
 document.onmouseover = function(event) {
     let target = event.target
@@ -126,19 +128,47 @@ function TabHeaderClick(event) {
     }
 }
 
-
-
-
-let modal = document.getElementById('myModal');
-let btn = documnet.getElementById('myBtn');
+let modal = document.getElementById("myModal");
+let btn = document.getElementById("myBtn");
 let span = document.getElementsByClassName("close")[0];
 
 
-btn.onclick = function(){
-    modal.style.display = "block";
+if (btn) { // проверка существования btn
+    console.log('lol kek ')
+    btn.onclick = function(){
+        modal.style.display = "block";
+    }
+}
 
+if (span) { // проверка существования span
+    span.onclick = function(){
+        modal.style.display = "none";
+    }
 }
-span.onclick = function(){
-    modal.style.display = "none";
+
+window.onclick = function(event){
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
+
+
+
+function myMove(){
+    let elem = document.getElementById('myAnimation');
+    let pos = 0;
+    let id = setInterval(frame,10);
+    function frame(){
+        if(pos == 350){
+            clearInterval(id);
+        }else{
+            pos++;
+            elem.style.top = pos +'px';
+            elem.style.left = pos +'px';
+            console.log(pos)
+        }
+    }
+}
+
+
 
