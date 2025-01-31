@@ -67,31 +67,49 @@ function funrange(){
 
 
 
-document.getElementById('nav').onmouseover = function(event){
+document.getElementById('nav').onmouseover = function(event) {
     let target = event.target;
-    if(target.className == 'menu-item'){
-        let s = target.getElementsByClassName('submenu')
+    if (target.className == 'menu-item') {
+        let s = target.getElementsByClassName('submenu');
         closeMenu();
-        s[0].style.display = 'block'
+        if (s.length > 0) {
+            s[0].style.display = 'block';
+        }
     }
 }
 
-
-document.onmouseover =function(event){
+document.onmouseover = function(event) {
     let target = event.target
-    console.log(event.target)
-    if(target.className != 'menu-item' && target.className !='submenu'){
-        closeMenu()
+    console.log(event.target);
+    if (target.className != 'menu-item' && target.className != 'submenu') {
+        closeMenu();
     }
 }
 
-function closeMenu(){
-    let menu = getElementById('nav') ;
-    let subm = getElementsByClassName('submenu');
+function closeMenu() {
+    let menu = document.getElementById('nav');
+    let subm = document.getElementsByClassName('submenu');
 
-    for(let i = 0 ; i < subm.length;i++ ){
+    for (let i = 0; i < subm.length; i++) {
         subm[i].style.display = 'none';
+    }
+}
 
+
+let tab;
+let tabcontent;
+
+
+window.onload = function(){
+    tabcontent = document.getElementsByClassName('tabcontent')
+    tab = document.getElementsByClassName('tab')
+    hidetabs(1)
+}
+
+
+function hidetabs(a){
+    for(let i = a;i < tabcontent.length; i++ ){
+        tabcontent[i].classList.remove('show')
     }
 
 }

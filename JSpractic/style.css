@@ -52,3 +52,40 @@
     position: absolute;
     cursor: pointer;
 }
+
+
+#tabs .tab{
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding: 5px 10px;
+    z-index: 5;
+
+
+}
+
+.whiteborder{
+    border: 1px red solid;
+    border-bottom: 1px white;
+    border-radius: 3px 3px 0 0 ;
+
+}
+
+#tabs .tabcontent{
+    width: 300px;
+    height: 60px;
+    border: red solid 2px;
+    z-index: 1;
+    top: -1px;
+    padding: 10px ;
+    border-radius: 0 0 3px 3px;
+}
+
+#tabs .hide{
+    display: none;
+
+}
+
+#tabs .show{
+display: block;
+}
