@@ -258,3 +258,43 @@ background-color: #717171;
     to{opacity: 1}
 }
 
+
+
+
+#searchinput{
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+
+}
+
+#myul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+#myul li a {
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+
+}
+
+
+#myul li a.header{
+    background-color: #e2e2e2;
+    cursor: default;
+
+
+}
+#myul li a:hover:not(.header){
+    background-color: grey;
+}
