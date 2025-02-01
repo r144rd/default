@@ -120,11 +120,11 @@
 
 <button  id="myBtn">Open modal window</button>
 <div id="myModal" class="modal">
-    <div class="modal-content">
+    <!-- <div class="modal-content">
         <span class="close">&times;</span>
             <p>Modal window!</p>
         
-    </div>
+    </div> -->
 </div>
 
 <!-- void -->                                                           
@@ -204,6 +204,44 @@
         <li><a href="">Carl</a></li>
 
     </ul>
+
+
+
+    <div class="void"></div>
+
+    <p>First Number <input type="number" name="" id="n1"></p>
+    <p>second Number <input type="number" name="" id="n2"></p>
+
+    <Button onclick="plus()">+</Button>
+    <Button onclick="minus()">-</Button>
+
+    <hr>
+
+
+        <p id="out">Ответ=</p>
+
+
+<div class="void"></div>
+
+
+
+<img src="img/1.png" alt="" id="myimg" width="300" height="200">
+<div id="imgmodal" class="modal">
+    <span class="close" onclick="document.getElementById('myimg').style.display='none' ">&times;</span>
+    <img src="" alt="" class="modal-content" id="img01">
+    <div class="caption"></div>
+</div>
+
+<div class="void"></div>
+
+<div id="myprogres">
+    <div id="mybar">
+        <div id="label">
+            10%
+        </div>
+    </div>
+</div>
+<button onclick="movemove()">click</button>
 
 <script src="app.js"></script>
 </body>

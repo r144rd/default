@@ -128,29 +128,29 @@ function TabHeaderClick(event) {
     }
 }
 
-let modal = document.getElementById("myModal");
-let btn = document.getElementById("myBtn");
-let span = document.getElementsByClassName("close")[0];
+// let modal = document.getElementById("myModal");
+// let btn = document.getElementById("myBtn");
+// let span = document.getElementsByClassName("close")[0];
 
 
-if (btn) { // проверка существования btn
-    console.log('lol kek ')
-    btn.onclick = function(){
-        modal.style.display = "block";
-    }
-}
+// if (btn) { // проверка существования btn
+//     console.log('lol kek ')
+//     btn.onclick = function(){
+//         modal.style.display = "block";
+//     }
+// }
 
-if (span) { // проверка существования span
-    span.onclick = function(){
-        modal.style.display = "none";
-    }
-}
+// if (span) { // проверка существования span
+//     span.onclick = function(){
+//         modal.style.display = "none";
+//     }
+// }
 
-window.onclick = function(event){
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+// window.onclick = function(event){
+//     if (event.target == modal) {
+//         modal.style.display = "none";
+//     }
+// }
 
 
 
@@ -232,7 +232,73 @@ function searchfun(){
 }
 
 
+function plus(){
+    let num1,num2,result;
+    num1 = document.getElementById('n1').value
+    num1 = parseInt(num1);
+    num2 = document.getElementById('n2').value
+    num2 = parseInt(num2);
+    
+    result = num1 + num2 ;
+
+    let out= document.getElementById('out').innerHTML ="Result ="+result
+
+
+
+}
+
+
+function minus(){
+    let num1,num2,result;
+    num1 = document.getElementById('n1').value
+    num1 = parseInt(num1);
+    num2 = document.getElementById('n2').value
+    num2 = parseInt(num2);
+    
+    result = num1 - num2 ;
+
+    let out= document.getElementById('out').innerHTML ="Result ="+result
+
+}
+
+
+
+let modal = document.getElementById('imgmodal');
+let img= document.getElementById('myimg')
+let modalimg = document.getElementById('img01')
+let captiontext = document.getElementById('caption')
+
+img.onclick = function(){
+    modal.style.display = "block";
+    modalimg.src = this.src;
+    captiontext.innerHTML = this.alt;
+}
+
+
+let span = document.getElementsByClassName("close")[0]
+span.onclick = function(){
+    modal.style.display = "none";
+
+}
 
 
 
 
+
+
+
+function movemove(){
+    let elem = document.getElementById('mybar')
+    let width = 10;
+    let id = setInterval(frame,30)
+    function frame(){
+        if(width>=100){
+            clearInterval(id);
+        }
+        else{
+            width++;
+            elem.style.width = width + '%';
+            document.getElementById('label').innerHTML = width*1 +'%';
+        }
+    }
+}
