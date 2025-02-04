@@ -37,3 +37,62 @@ input[type="text"] {
     border-radius: 5px; 
     border: 2px solid rgba(68, 223, 115, 0.699);  
 } 
+
+.chat-container {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+}
+
+.chat-box {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+}
+
+
+.message-user {
+    background-color: #d1e7dd;
+    align-self: flex-end;
+    color: black;
+}
+
+.message-other {
+    background-color: #f8d7da;
+    align-self: flex-start;
+    color: black;
+}
+
+#message-input {
+    width: calc(100% - 110px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#send-button {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: #0056b3;
+    
+}

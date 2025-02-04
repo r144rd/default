@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box"></div>
+        <input type="text" id="message-input" placeholder="Введите ваше сообщение..." />
+        <button id="send-button">Отправить</button>
+    </div>
+
+    <div class="link-return">
+        <a href="../index.html"><img src="../img/return-white.png" alt="return to main page" width="100px" height="100px"></a>
+    </div>
+
+    <script>
+        document.getElementById('send-button').addEventListener('click', sendMessage);
+        document.getElementById('message-input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        sendMessage();
+        console.log("test")
+    }
+});
+
+function sendMessage() {
+    const input = document.getElementById('message-input');
+    const messageText = input.value.trim();
+    
+    if (messageText === '') {
+        return;
+    }
+    const messageElement = document.createElement('div');
+    messageElement.className = 'message message-user';
+    messageElement.textContent = messageText;
+
+    const chatBox = document.getElementById('chat-box');
+    chatBox.appendChild(messageElement);
+
+    
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    
+    input.value = '';
+    console.log("function ")
+}
+    </script>
+</body>
+</html>
