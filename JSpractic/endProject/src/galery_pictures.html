@@ -15,44 +15,92 @@
 
         <main class="main-picture">
             <div class="container">
-                <div class="card">
-                    <img src="../img/picture-3.jpg" alt="Image 1">
+                <div class="card image-container">
+                    <img src="../img/picture-3.jpg" alt="Image 1" class="zoom-image" id="myImage">
                     <h3>Эдуард Мане – Бар в Фоли-Бержер</h3>
                     <p></p>
                 </div>
-                <div class="card">
-                    <img src="../img/picture-2.jpg" alt="Image 2">
+                <div class="card image-container">
+                    <img src="../img/picture-2.jpg" alt="Image 2" class="zoom-image" id="myImage">
                     <h3>Иван Иванович Шишкин – Утро в сосновом лесу</h3>
                     <p></p>
                 </div>
-                <div class="card">
-                    <img src="../img/picture-4.jpg" alt="Image 3">
+                <div class="card image-container">
+                    <img src="../img/picture-4.jpg" alt="Image 3" class="zoom-image" id="myImage">
                     <h3>senan – мечеть ШАХ СУЛТАН ГУСЕЙНА</h3>
                     <p></p>
                 </div>
-                <div class="card">
-                    <img src="../img/picture-5.jpg" alt="Image 1">
+                <div class="card image-container">
+                    <img src="../img/picture-5.jpg" alt="Image 1" class="zoom-image" id="myImage">
                     <h3>Владимир – Привет, земляк!</h3>
                     <p></p>
                 </div>
-                <div class="card">
-                    <img src="../img/picture-6.jpg" alt="Image 2">
+                <div class="card image-container">
+                    <img src="../img/picture-6.jpg" alt="Image 2" class="zoom-image" id="myImage">
                     <h3>Александра Ван – The Long Winter (Долгая зима)</h3>
                     <p></p>
                 </div>
-                <div class="card">
-                    <img src="../img/picture-7.jpg" alt="Image 3">
+                <div class="card image-container">
+                    <img src="../img/picture-7.jpg" alt="Image 3" class="zoom-image" id="myImage">
                     <h3>Valeri – По городам России</h3>
                     <p></p>
                 </div>
             </div>
         </main>
 
-        <h1>added new brench</h1>
-        <p>New new new new new new branch</p>
+
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <p style="color: white; text-align:center;">Description</p>
+            <div id="caption"></div>
+        </div>
+
+        
         
         
 
-    <script></script>
+    <script>
+        const image = document.querySelector('.zoom-image');
+
+image.addEventListener('mouseenter', () => {
+    image.style.transform = 'scale(1.2)'; // Увеличение изображения
+});
+
+image.addEventListener('mouseleave', () => {
+    image.style.transform = 'scale(1)'; // Возврат к исходному размеру
+});
+
+
+const modal = document.getElementById("myModal");
+const img = document.getElementById("myImage");
+const modalImg = document.getElementById("img01");
+const captionText = document.getElementById("caption");
+const span = document.getElementsByClassName("close")[0];
+
+// При нажатии на изображение открываем модальное окно
+const images = document.querySelectorAll('.zoom-image');
+
+// Добавляем обработчик событий для каждого изображения
+images.forEach(image => {
+    image.onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.src; // Устанавливаем источник изображения в модальном окне
+        captionText.innerHTML = this.alt; // Устанавливаем подпись
+    }
+});
+
+// При нажатии на "x" закрываем модальное окно
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Закрытие модального окна при нажатии вне изображения
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+    </script>
 </body>
 </html>

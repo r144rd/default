@@ -137,3 +137,45 @@ input[type="text"] {
     padding: 0 15px 15px;
     color: #555;
 }
+
+.zoom-image {
+    width: 100%; /* Изображение занимает всю ширину контейнера */
+    transition: transform 0.3s ease; /* Плавный переход при увеличении */
+}
+
+.image-container:hover .zoom-image {
+    transform: scale(1.2); /* Увеличение изображения при наведении */
+}
+
+
+/* Модальное окно */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Окно фиксировано */
+    z-index: 1; /* На переднем плане */
+    left: 0;
+    top: 0;
+    padding-top: 50px;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Включить прокрутку, если необходимо */
+    background-color: rgb(0,0,0); /* Черный фон */
+    background-color: rgba(0,0,0,0.9); /* Полупрозрачный черный фон */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%; /* Ширина изображения в модальном окне */
+    max-width: 700px; /* Максимальная ширина */
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
