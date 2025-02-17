@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <h1>to-do list</h1>
+        <hr>
+    </header>
+
+    <main>
+        <input type="text" id="taskInput" placeholder="Введите задачу...">
+        <button id="addButton">ADD TASK</button>
+        <ul id="taskList"></ul>
+    </main>
+
+
+    <script>
+        let i = 0
+        document.getElementById('addButton').onclick = function(){
+            const taskInput = document.getElementById('taskInput')
+            const taskText = taskInput.value.trim();
+
+            
+        if(taskText === ''){
+            alert("Please input task!!!")
+            i++
+            console.log(i)
+            if(i == 3){
+                alert("ТЫ ДАУН")  //Пасхалка разраба
+            }
+            return
+        }
+        
+
+        const tasklist = document.getElementById('taskList')
+        const listItem = document.createElement('li')
+
+        listItem.textContent =taskText
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.onclick = function() {
+            taskList.removeChild(listItem);
+        };
+    
+        listItem.appendChild(deleteButton);
+        taskList.appendChild(listItem);
+    
+        taskInput.value = ''; 
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+    <div class="link-return">
+        <a href="../index.html"><img src="../img/return-white.png" alt="return to main page" width="100px" height="100px"></a>
+    </div>
+    
+
+</body>
+</html>

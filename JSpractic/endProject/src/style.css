@@ -1,5 +1,6 @@
 body{
     background-color: black;
+    color: white;
 
 }
 header{
@@ -178,4 +179,12 @@ input[type="text"] {
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.li-item{
+    justify-content: space-between;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    position:relative;
 }
