@@ -164,15 +164,72 @@
 // .then(console.log())
 
 
+// fetch('/article/promise-chaining/user.json')
+//   .then(response => response.json())
+//   .then(user => fetch(`https://api.github.com/users/${user.name}`))
+//   .then(response => response.json())
+//   .then(githubUser => new Promise((resolve, reject) => {
+//     let img = document.createElement('img');
+//     img.src = githubUser.avatar_url;
+//     img.className = "promise-avatar-example";
+//     document.body.append(img);
 
-fetch('https://no-such-file.bla')
-  .then(response =>response.json())
-  .catch(err => onslotchange.log(err))
+//     setTimeout(() => {
+//       img.remove();
+//       resolve(githubUser);
+//     }, 3000);
+//   }))
+//   .catch(error => alert(error.message));
+
+// new Promise(function(resolve,reject){
+//   throw new Error("Oshibka shibka")
+// }).catch(console.log)
+
+// new Promise ((resolve,reject) =>{
+//   resolve("GOOD")
+// }).then((result) =>{
+//   throw new Error("Huetta")
+// }).catch(console.log)
+
+
+
+
+// new Promise((resolve,reject) =>{
+//   resolve("ok")
+// }).then((result) => {
+//   blabla()
+// }).catch(console.log)
+
+
+
+
+// setTimeout(()=>{
+//   console.log("hello fucking timeout")
+// },5000)
+
+// new Promise((resolve,reject) =>{
+//   throw new Error("oshibka suka blyat")
+  
+// }).catch((error) => {
+//   console.log(error)
+// }).then(() => { console.log("mister")})
 
 
 
 
 
+new Promise((resolve,reject) =>{
+  throw new Error("Error fucking")
 
+}).catch((error)=>{
+  if(error instanceof URIError){
 
+  }else {
+    console.log("cant obrabotat oshibky")
+    throw error
+  }
+}).then(function(){
 
+}).catch(error => {
+  console.log(`Undefined error ${error}`)
+})
