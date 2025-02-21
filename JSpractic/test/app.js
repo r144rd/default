@@ -218,18 +218,80 @@
 
 
 
-new Promise((resolve,reject) =>{
-  throw new Error("Error fucking")
+// new Promise((resolve,reject) =>{
+//   throw new Error("Error fucking")
 
-}).catch((error)=>{
-  if(error instanceof URIError){
+// }).catch((error)=>{
+//   if(error instanceof URIError){
 
-  }else {
-    console.log("cant obrabotat oshibky")
-    throw error
-  }
-}).then(function(){
+//   }else {
+//     console.log("cant obrabotat oshibky")
+//     throw error
+//   }
+// }).then(function(){
 
-}).catch(error => {
-  console.log(`Undefined error ${error}`)
-})
+// }).catch(error => {
+//   console.log(`Undefined error ${error}`)
+// })
+
+
+
+// window.addEventListener('unhandledrejection',function(event){
+//   console.log(event.promise)
+//   console.log(event.reason)
+
+// })
+
+
+// new Promise(function(){
+//   throw new Error ("error")
+// })
+
+
+  // Promise.all([
+  //   new Promise(resolve => setTimeout(()=> resolve(1), 1000)),
+  //   new Promise(resolve => setTimeout(()=> resolve(2)), 2000),
+  //   new Promise(resolve => setTimeout(()=> resolve(3)), 3000)
+  // ]).then(console.log)
+
+
+
+
+let names = ['r144rd', 'sm1hero','nemudriy']
+
+let request = names.map(name => fetch(`https://api.github.com/users/${name}`));
+
+
+Promise.all(request)
+  .then(responses =>{
+    for(let response of responses){
+      console.log(`${response.url} :  ${response.status}`)
+    }
+    return responses
+
+  })
+
+  .then (responses => Promise.all(responses.map(r=> r.json())))
+
+  .then(users => users.forEach(user => console.log(user.name)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
