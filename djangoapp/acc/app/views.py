@@ -12,7 +12,10 @@ def index(request):
     
     
     data = {"header": header, "langs":langs,"user":user, "address":address }
-    return render(request, "index.html", context=data)
+    data2 = {"red":"красный","blue":"siniy","yellow":"yellow"}
+    
+    return render(request, "index.html", context={"data2":data2})
+    
     
     
     
