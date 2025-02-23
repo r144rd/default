@@ -5,8 +5,17 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return render(request,"index.html")
-
+    header =" User Data"
+    langs = ["python", "java","c++"]
+    user = {"name":"tom", "age": 34}
+    address = ("abrikosovaya",23,34)
+    
+    
+    data = {"header": header, "langs":langs,"user":user, "address":address }
+    return render(request, "index.html", context=data)
+    
+    
+    
 
 def about(request):
     return render(request,"about.html")
