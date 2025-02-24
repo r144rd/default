@@ -1,36 +1,46 @@
+{% load static %}
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body style="background-color: black; color: white;">
-    <h1>HELLO WTF </h1>
-    <p>list</p>
+<body >
+    <h1>Login/Registration</h1>
 
-    <h2>{{ header }}</h2>
-    <p>{{ message }}</p>
-    <p> name = {{user.name}} age = {{user.age}}</p>
-    <p> address = {{address.0}} dom = {{address.1}} kv = {{address.2}}</p>
-    <p> languages = {{langs.0}} {{langs.1}}</p>
+    <div class="container">
+        <h2>Авторизация</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Имя пользователя:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit">Войти</button>
+        </form>
+        <div id="message"></div>
+    </div>
 
-
-
-    <ul>
-    {% for lan in langs %}
-        <li>{{ lan }}</li>
-    {%  empty %}
-    <li>NOT FOUND</li>
-    {% endfor %}
-    </ul>   
-    
-    
-    {% for key,value in data2.items  %}
-        <p>{{ key }} : {{ value }}</p>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Предотвращаем отправку формы
         
-    {% endfor %}
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
         
-    
+            // Здесь можно добавить логику для проверки имени пользователя и пароля
+            if (username === 'admin' && password === 'password') {
+                window.location.href = 'http://127.0.0.1:8000/about/'; // Переход на другую страницу
+            } else {
+                document.getElementById('message').textContent = 'Неверное имя пользователя или пароль.';
+            }
+        });
+    </script>
 </body>
 </html>
