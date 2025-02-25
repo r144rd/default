@@ -8,9 +8,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
 <body >
     <h1>Login/Registration</h1>
-
     <div class="container">
         <h2>Авторизация</h2>
         <form id="loginForm">
@@ -27,6 +27,32 @@
         <div id="message"></div>
     </div>
 
+
+
+    <h2>User Form</h2>
+    <form action="postuser/" method="post">
+        {% csrf_token %}
+        <p>name: <br> <input name="name"></p>
+        <p>age: <br> <input name="age" type="number"></p>
+        <p>
+            languages  : <br/>
+            <input name="languages">
+            <input type="languages">
+            <input type="languages">
+
+
+        </p>
+        <input type="submit" value="send">
+
+    </form>
+    
+    
+
+
+
+
+
+    
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Предотвращаем отправку формы

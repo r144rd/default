@@ -1,14 +1,42 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/styleabout.css' %}">
+
 </head>
 <body>
-    <h1>abouyt</h1>
-    <a href="http://127.0.0.1:8000/">aa</a>
+    
 
     
+    <header>  
+            <h1>Личный кабинет Домоуправляющей компании.</h1>
+
+            <div class="container-user">
+                <img src="{% static "img/forest.jpg" %}" alt="">
+                    <h3> Данные о User:</h3>
+                <h4>Имя  : {{user.name}} Фамилия : {{user.surname}}</h4> 
+            </div>
+            
+            <div class="action-do">
+                <p>Обращения Жителей :</p>   {% comment %} В стадии разработки {% endcomment %}
+                <a href="#">Не рассмотренные</a>
+                <a href="#"> / рассмотренные</a>
+                <p>--------------------------------</p>
+                <a href="#"> Активные Заявки</a>
+                <ul>
+                    <li> Обращение 1 <a href="">&#128270;</a>  </li>
+                    <li> Обращение 2 <a href="">&#128270;</a>  </li>   {% comment %} Реализховать генерацию html  с обращениями  {% endcomment %}
+                    <li> Обращение 3  <a href="">&#128270;</a> </li>   {% comment %} ну или сделать ссылки на готовые html файлы  {% endcomment %}
+                    <li> Обращение 4  <a href="">&#128270;</a> </li>
+                </ul>
+                
+            </div>
+
+        <hr color="white">
+    </header>
 </body>
 </html>

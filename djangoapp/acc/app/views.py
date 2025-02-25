@@ -3,23 +3,17 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    header =" User Data"
-    langs = ["python", "java","c++"]
-    user = {"name":"tom", "age": 34}
-    address = ("abrikosovaya",23,34)
-    
-    
-    data = {"header": header, "langs":langs,"user":user, "address":address }
-    data2 = {"red":"красный","blue":"siniy","yellow":"yellow"}
-    
-    return render(request, "index.html", context={"data2":data2})
-    
-    
-    
+    return render(request, "index.html")
+
+
+def postuser(request):
+    name = request.POST.get("name","undefined")
+    age = request.POST.get("age",1)
+    langs = request.POST.getlist("lang")
+    return HttpResponse(f"<h1> Name: {name} age : {age} </h1> <h2>languages {langs}</h2>")    
     
 
 def about(request):
     return render(request,"about.html")
 
-def contact(request):
-    return render(request,"contact.html")
+
