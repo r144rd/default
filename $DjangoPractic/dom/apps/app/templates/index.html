@@ -16,11 +16,6 @@
             <form method="post" id="registrationform" action="{%url 'register' %}">
                 {% csrf_token %}
                 {{form.as_p}}
-                {% for field in form %}
-                    {% for error in fieldset.errors %}
-                        <div class="error">{{error}}</div>
-                    {% endfor %}
-                {% endfor %}
                 <button type="submit">Зарегистрироваться</button>
                 
             </form>
