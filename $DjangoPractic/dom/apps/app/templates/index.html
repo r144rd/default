@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>/</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Личный Кабинет</h1>
+        <div class="registration">
+            <h2>Регистрация</h2>
+            <form id="registrationform">
+                <input type="text" id="name" placeholder="ФИО" required>
+                <input type="date" placeholder="Дата Рождения" id="dob" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+        <div id="services">
+            <h2>Запись на услуги</h2>
+            <select name="" id="serviceselect">
+                <option value="УСЛУГА 1"></option>
+                <option value="УСЛУГА 2"></option>
+                <option value="УСЛУГА 3"></option>
+            </select>
+            <button id="bookservice">Записаться</button>
+        </div>
+        <div id="attendance">
+            <h2>Учет Посещаемости</h2>
+            <button id="checkattendance"> Проверить посещаемость</button>
+            <div id="attendanceresult"></div>
+        </div>
+        <div id="payment">
+            <h2>Оплата Услуг</h2>
+            <button id="payservice">Оплатить</button>
+            <div id="paymentresult"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
