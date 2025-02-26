@@ -13,19 +13,24 @@
         <h1>Личный Кабинет</h1>
         <div class="registration">
             <h2>Регистрация</h2>
-            <form id="registrationform">
-                <input type="text" id="name" placeholder="ФИО" required>
-                <input type="date" placeholder="Дата Рождения" id="dob" required>
-                <input type="email" id="email" placeholder="Email" required>
+            <form method="post" id="registrationform" action="{%url 'register' %}">
+                {% csrf_token %}
+                {{form.as_p}}
+                {% for field in form %}
+                    {% for error in fieldset.errors %}
+                        <div class="error">{{error}}</div>
+                    {% endfor %}
+                {% endfor %}
                 <button type="submit">Зарегистрироваться</button>
+                
             </form>
         </div>
         <div id="services">
             <h2>Запись на услуги</h2>
             <select name="" id="serviceselect">
-                <option value="УСЛУГА 1"></option>
-                <option value="УСЛУГА 2"></option>
-                <option value="УСЛУГА 3"></option>
+                <option value="УСЛУГА 1"> Уборка Преддомомвой территории</option>
+                <option value="УСЛУГА 2">Консультация по поводу жилья </option>
+                <option value="УСЛУГА 3">  узнать Статус КомУслуг</option>
             </select>
             <button id="bookservice">Записаться</button>
         </div>
@@ -52,7 +57,35 @@
 
 
 
+<script>
+    /*document.getElementById('registrationform').addEventListener('submit',function(event){
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const dob = document.getElementById('dob').value;
+        const email = document.getElementById('email').value;
 
+        
+        window.loaction.href = 'lk.html'
+    })
+*/
+    document.getElementById('bookservice').addEventListener('click',function(){
+        const service = document.getElementById('serviceselect').value
+        alert(`Вы записанны на услугу ${service}`)
+
+    })
+
+document.getElementById('checkattendance').addEventListener('click',function(){
+    document.getElementById('attendanceresult').innerText = "Вы Посетили три услуги в этом месяце"
+
+})
+
+document.getElementById('paymentresult').innerText = "payment succes"
+
+
+
+
+
+</script>
 
 
 
