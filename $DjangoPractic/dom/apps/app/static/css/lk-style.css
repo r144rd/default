@@ -1,0 +1,151 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+}
+
+h1{
+text-align: center;
+color: #333;
+}
+.profile{
+    display:flex;
+    align-items: center;
+    margin-top: 20px;
+
+}
+
+.profile-image{
+flex: 0 0 150px;
+margin-right: 20px;
+
+}
+.profile-image img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+
+}
+
+.profile-info{
+flex: 1;
+}
+
+.profile-info h2{
+    margin: 0;
+    color: #555;
+
+}
+
+.profile-info p{
+    color: #777;
+}
+
+.logout-button{
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px 15px;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.logout-button:hover{
+    background-color: #c0392b;
+}
+
+
+
+.property-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.property-list li {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.payment-button {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.payment-button:hover {
+    background-color: #2980b9;
+}
+.create-request-button {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px 15px;
+    background-color: #2ecc71;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.create-request-button:hover {
+    background-color: #27ae60;
+}
+
+.announcements-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.announcements-list li {
+    margin: 10px 0;
+}
+
+.feedback-form {
+    margin-top: 20px;
+}
+
+.feedback-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.feedback-form button {
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.feedback-form button:hover {
+    background-color: #2980b9;
+}
