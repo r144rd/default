@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app import views 
-from app.views import register
+from app.views import register, lk
 from django.views.generic import TemplateView
 
 
@@ -26,8 +26,8 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/',register, name ='register'),
-    path('lk',TemplateView.as_view(template_name= 'lk.html'),name='lk')
-    
+    path('',register, name ='register'),
+    # path('lk',TemplateView.as_view(template_name= 'lk.html'),name='lk') Устаревшая 
+    path('lk/', lk, name='lk'),
     
 ]
