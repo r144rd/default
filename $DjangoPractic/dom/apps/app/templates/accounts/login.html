@@ -1,4 +1,5 @@
-{% load static %}
+
+    {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,47 +8,26 @@
     <title>/</title>
     <link rel="stylesheet" href="{% static "css/style.css" %}">
 </head>
-<body  onload="showForm('register')">
-    <h2>Авторизация и Регистрация</h2>
-    <button onclick="showForm('register')">Регистрация</button>
-    <button onclick="showForm('login')">Вход</button>
-
-    <div id="registerForm" style="display: none;">
-        <h3>Регистрация</h3>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="hidden" name="register" value="1">
-            <button type="submit">Зарегистрироваться</button>
-        </form>
-    </div>
-
-    <div id="loginForm" style="display: none;">
-        <h3>Вход</h3>
-        <form method="post">
-            {% csrf_token %}
-            <input type="text" name="username" placeholder="Логин" required>
-            <input type="password" name="password" placeholder="Пароль" required>
-            <input type="hidden" name="login" value="1">
-            <button type="submit">Войти</button>
-        </form>
-    </div>
-
-
+<body>
 
     <div class="container">
-        {% comment %} <h1>Личный Кабинет</h1>
+        <h1>Личный Кабинет</h1>
         <div class="registration">
             <h2>Регистрация</h2>
             <form method="post" id="registrationform" action="{%url 'register' %}">
+                {% csrf_token %}
+                {{form.as_p}}
+
+
+
+                
+                
                 
 
 
 
-
-
                 <button type="submit">Войти в Систему</button>
-            </form> {% endcomment %}
+            </form>
         </div>
 
 
@@ -131,17 +111,9 @@ document.getElementById('checkattendance').addEventListener('click',function(){
 document.getElementById('paymentresult').innerText = "payment succes"
 
 
-function showForm(formType) {
-    document.getElementById('registerForm').style.display = formType === 'register' ? 'block' : 'none';
-    document.getElementById('loginForm').style.display = formType === 'login' ? 'block' : 'none';
-}
-
 
 
 
 </script>
-
-
-
 </body>
 </html>
