@@ -14,12 +14,14 @@
 //   });
 
 
-// function fetchData(callback) {
-//     setTimeout(() => {
-//         const data = "Данные загружены";
-//         callback(data);
-//     }, 2000); // Имитация задержки в 2 секунды
-// }
+function fetchData(callback) {
+    setTimeout(() => {
+        const data = "Данные загружены";
+        callback(data);
+    }, 2000); // Имитация задержки в 2 секунды
+}
+
+console.log("sss")
 
 // function handleData(data) {
 //     console.log(data);
