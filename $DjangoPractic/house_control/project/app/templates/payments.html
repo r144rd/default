@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payments</title>
+    <link rel="stylesheet" href="{% static 'css/stylepay.css' %}">
+</head>
+<body>
+    <h1>Оплата</h1>
+    <h2>Счет к оплате: 1500 руб.</h2>
+    <div id="qr-code">
+        <p>Случайный ключ для QR-кода <strong>{{random_text}}</strong></p>
+        <img src="/media/qr_code.png" alt="QR-код для оплаты" height="500px" width="500px"> 
+        {% comment %}  {% endcomment %}
+    </div>
+    <a href="/lk">Вернуться на главную</a>
+</body>
+</html>

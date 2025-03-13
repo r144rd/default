@@ -10,8 +10,8 @@
 
 </head>
 <body>
-    <h1>Добро пожаловать в ваш Личный кабинет!</h1>
-    <a href="/">Выйти</a>
+    
+    
     <header>
         <h1>Личный кабинет потребителя</h1>
     </header>
@@ -28,33 +28,33 @@
     <main>
         <section id="profile">
             <h2>Личный профиль</h2>
-            <p>Имя: Иван Иванов</p>
+            <p> Nikita kashlev{{  user.name }}</p>
             <p>Телефон: +7 123 456 78 90</p>
-            <p>Email: ivan@example.com</p>
+            <p>{{ user.email }}</p>
         </section>
 
         <section id="payments">
             <h2>Управление платежами</h2>
             <ul>
                 <li>Счет за услуги: 1500 руб.</li>
-                <li><button>Оплатить</button></li>
+                <li><a href="{% url 'payment_view' %}"><button>Оплатить</button></a></li>
             </ul>
         </section>
 
         <section id="requests">
             <h2>Заявки и обращения</h2>
-            <button>Создать заявку</button>
+            <a href="{% url 'request_form' %}"><button>Создать заявку</button></a>
             <p>Статус вашей заявки: В процессе</p>
         </section>
 
         <section id="notifications">
             <h2>Уведомления</h2>
-            <p>У вас новые уведомления о вскрытии труб.</p>
+            <p>0 Уведомлений </p>
         </section>
 
         <section id="documents">
             <h2>Документы</h2>
-            <button>Скачать договор</button>
+            <a href="project/media/Договор1337.txt" download class="download-button">Скачать договор</a>
         </section>
 
         <section id="support">
@@ -64,6 +64,7 @@
     </main>
     <footer>
         <p>© 2023 Домоуправляющая компания. Все права защищены.</p>
+        <a href="/">Выйти</a>
     </footer>
 </body>
 </html>

@@ -5,22 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Авторизация и регистрация</title>
-    <link rel="stylesheet" href="{% static "style.css" %}">
+    <link rel="stylesheet" href="{% static 'css/stylemain.css' %}">
 </head>
 <body>
     <h1>Авторизация и Регистрация</h1>
-    <form method="post">
-        {% csrf_token %}
+
+    <div>
+        <h2>Выберите действие</h2>
+        <button id="show-register-form">Зарегистрироваться</button>
+        <button id="show-login-form">Войти</button>
+    </div>
+
+    <div id="register-form" style="display:none;">
         <h2>Регистрация</h2>
-        {{ register_form.as_p }}
-        <button type="submit" name="register">Зарегистрироваться</button>
-    </form>
-  
-    <form method="post">
-        {% csrf_token %}
+        <form method="post">
+            {% csrf_token %}
+            {{ register_form.as_p }}
+            <button type="submit" name="register">Зарегистрироваться</button>
+        </form>
+    </div>
+
+    <div id="login-form" style="display:none;">
         <h2>Авторизация</h2>
-        {{ login_form.as_p }}
-        <button type="submit" name="login">Войти</button>
-    </form>
+        <form method="post">
+            {% csrf_token %}
+            {{ login_form.as_p }}
+            <button type="submit" name="login">Войти</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('show-register-form').addEventListener('click', function() {
+            document.getElementById('register-form').style.display = 'block';
+            document.getElementById('login-form').style.display = 'none';
+        });
+
+        document.getElementById('show-login-form').addEventListener('click', function() {
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('register-form').style.display = 'none';
+        });
+    </script>
 </body>
 </html>
