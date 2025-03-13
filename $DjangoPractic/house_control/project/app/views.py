@@ -2,6 +2,7 @@
 import random
 import string
 import qrcode
+import json
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import RegistrationForm, LoginForm
@@ -10,10 +11,21 @@ import os
 import requests
 from .models import Request
 from .forms import RequestForm
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.views import View
+
+
+
+
+
+
+
+
 
 def index(request):
-    register_form = RegistrationForm()  # Инициализируем форму регистрации
-    login_form = LoginForm()  # Инициализируем форму входа
+    register_form = RegistrationForm()  # форма регистрации  регистрации
+    login_form = LoginForm()  # форма логина
 
     if request.method == 'POST':
         if 'register' in request.POST:
@@ -57,7 +69,7 @@ def payments_view(request):
     
     
 TELEGRAM_TOKEN = '8002181617:AAHySgOXyolPmFDiPdH8_1nUOU34gfqD_H8'
-CHAT_ID = '901505541'
+CHAT_ID = '-1002512035980'
 
 
 
@@ -66,7 +78,7 @@ def request_form(request):
         form = RequestForm(request.POST)
         if form.save():
             # логика отправки -->
-            message = f"Новое обращение от {form.cleaned_data['name']} \n email:{form.cleaned_data['email']} \n Описание :{form.cleaned_data['description']}"
+            message = f"Новое обращение от {form.cleaned_data['name']} \n email: {form.cleaned_data['email']} \n Описание :{form.cleaned_data['description']}"
             requests.post(f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage", data={
                 'chat_id': CHAT_ID,
                 'text': message
@@ -78,4 +90,25 @@ def request_form(request):
 
 
 
+
+
+@csrf_exempt  
+def send_message(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            message = data.get('message', '')
+            if not message:
+                return JsonResponse({'success': False, 'error': 'Empty message'}, status=400)
         
+            return JsonResponse({'success': True})
+        except json.JSONDecodeError:
+            return JsonResponse({'success': False, 'error': 'Invalid JSON'}, status=400)
+    return JsonResponse({'success': False, 'error': 'Only POST requests are allowed'}, status=405)
+
+def get_messages(request):
+    
+    return JsonResponse({'messages': ["Сообщение 1", "Сообщение 2", "Сообщение 3"]})  # Пример
+        
+def chat(request):
+    return render (request, 'chat.html')

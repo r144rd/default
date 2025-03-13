@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
+
 # Create your models here.
 
 class Request(models.Model):
@@ -13,4 +14,13 @@ class Request(models.Model):
     
     def __str__(self):
         return f"{self.name} - {self.created_at}"
+    
+    
+class Message(models.Model):
+    user_message = models.TextField()
+    bot_response = models.TextField(blank=True, null=True)
+    created_at = models.DateField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"{self.user_message} - {self.created_at}"
     
