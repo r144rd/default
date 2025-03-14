@@ -86,7 +86,7 @@ footer {
 
 .download-button {
     display: inline-block;
-    background-color: #28a745; /* Зеленый цвет */
+    background-color: #28a745;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -98,5 +98,6 @@ footer {
 }
 
 .download-button:hover {
-    background-color: #218838; /* Темнее при наведении */
+    background-color: #218838;
 }
+

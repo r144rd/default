@@ -8,8 +8,9 @@ from .forms import RegistrationForm, LoginForm
 from django.contrib.auth import login
 import os
 import requests
-from .models import Request
+
 from .forms import RequestForm
+from .models import FAQ
 
 def index(request):
     register_form = RegistrationForm()  # Инициализируем форму регистрации
@@ -57,7 +58,7 @@ def payments_view(request):
     
     
 TELEGRAM_TOKEN = '8002181617:AAHySgOXyolPmFDiPdH8_1nUOU34gfqD_H8'
-CHAT_ID = '901505541'
+CHAT_ID = '-1002512035980'
 
 
 
@@ -78,4 +79,6 @@ def request_form(request):
 
 
 
-        
+def faq_view(request):
+    faqs = FAQ.objects.all()
+    return render(request, 'faq.html', {'faqs': faqs})

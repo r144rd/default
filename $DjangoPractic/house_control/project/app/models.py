@@ -14,3 +14,12 @@ class Request(models.Model):
     def __str__(self):
         return f"{self.name} - {self.created_at}"
     
+    
+from django.db import models
+
+class FAQ(models.Model):
+    question = models.CharField(max_length=255)
+    answer = models.TextField()
+
+    def __str__(self):
+        return self.question

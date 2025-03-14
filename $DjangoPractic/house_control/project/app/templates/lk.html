@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
-<body>
+<body >
     
     
     <header>
@@ -22,7 +22,7 @@
             <li><a href="#requests">Заявки</a></li>
             <li><a href="#notifications">Уведомления</a></li>
             <li><a href="#documents">Документы</a></li>
-            <li><a href="#support">Поддержка</a></li>
+            {% comment %} <li><a href="#support">Поддержка</a></li> {% endcomment %}
         </ul>
     </nav>
     <main>
@@ -57,10 +57,12 @@
             <a href="project/media/Договор1337.txt" download class="download-button">Скачать договор</a>
         </section>
 
-        <section id="support">
-            <h2>Поддержка</h2>
-            <p><strong>Чат с поддержкой:</strong> Ожидайте ответа оператора...</p>
+
+        <section id="faq">
+            <h2>FAQ - часто задаваемые вопросы</h2>
+            <a href="{% url 'faq' %}"> <button>FAQ</button></a>
         </section>
+        
     </main>
     <footer>
         <p>© 2023 Домоуправляющая компания. Все права защищены.</p>
